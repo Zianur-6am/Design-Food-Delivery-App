@@ -56,14 +56,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 IconButton(
-                  icon: Builder(
-                    builder: (context) {
-                      return const Icon(
-                        Icons.home,
-                        color: Colors.black,
-                        size: 30,
-                      );
-                    }
+                  icon: const Icon(
+                    Icons.home,
+                    color: Colors.black,
+                    size: 30,
                   ),
                   onPressed: () {
                     bottomNavController.changeTabIndex(0);
