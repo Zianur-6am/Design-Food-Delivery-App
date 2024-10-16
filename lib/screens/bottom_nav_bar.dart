@@ -1,4 +1,6 @@
+import 'package:design_food_delivery_app/controllers/nav_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -8,9 +10,25 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
+
+  BottomNavController bottomNavController = Get.put(BottomNavController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+      body: Obx(() {
+        // This will reactively update the screen based on the selected index
+        return IndexedStack(
+          index: bottomNavController.selectedIndex.value,
+          children: [
+            Center(child: Text('Home Page')),
+            Center(child: Text('Favorite Page')),
+            Center(child: Text('Edit Note Page')),
+            Center(child: Text('Menu Page')),
+          ],
+        );
+      }),
 
 
       floatingActionButton: FloatingActionButton.large(
@@ -38,12 +56,18 @@ class _BottomNavBarState extends State<BottomNavBar> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 IconButton(
-                  icon: const Icon(
-                    Icons.home,
-                    color: Colors.black,
-                    size: 30,
+                  icon: Builder(
+                    builder: (context) {
+                      return const Icon(
+                        Icons.home,
+                        color: Colors.black,
+                        size: 30,
+                      );
+                    }
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    bottomNavController.changeTabIndex(0);
+                  },
                 ),
 
                 Padding(
@@ -54,7 +78,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
                       color: Colors.black,
                       size: 30,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      bottomNavController.changeTabIndex(1);
+                    },
                   ),
                 ),
               ],
@@ -73,7 +99,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
                       color: Colors.black,
                       size: 30,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      bottomNavController.changeTabIndex(2);
+                    },
                   ),
                 ),
               ],
@@ -84,7 +112,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 color: Colors.black,
                 size: 30,
               ),
-              onPressed: () {},
+              onPressed: () {
+                bottomNavController.changeTabIndex(3);
+              },
             ),
           ],
         ),
