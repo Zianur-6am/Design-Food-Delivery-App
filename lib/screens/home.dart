@@ -1,3 +1,5 @@
+import 'package:design_food_delivery_app/widget/categories.dart';
+import 'package:design_food_delivery_app/widget/popular_food_nearby.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -103,16 +105,7 @@ class Home extends StatelessWidget {
               padding: const EdgeInsets.only(left: 10),
               child: Container(
                 height: 100,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: <Widget>[
-                    Container(width: 160.0, color: Colors.red),
-                    Container(width: 160.0, color: Colors.blue),
-                    Container(width: 160.0, color: Colors.green),
-                    Container(width: 160.0, color: Colors.yellow),
-                    Container(width: 160.0, color: Colors.orange),
-                  ],
-                ),
+                child: Categories(),
               ),
             ),
             SizedBox(height: 10,),
@@ -135,17 +128,18 @@ class Home extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 10),
               child: Container(
-                height: 150,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: <Widget>[
-                    Container(width: 160.0, color: Colors.red),
-                    Container(width: 160.0, color: Colors.blue),
-                    Container(width: 160.0, color: Colors.green),
-                    Container(width: 160.0, color: Colors.yellow),
-                    Container(width: 160.0, color: Colors.orange),
-                  ],
-                ),
+                height: 180,
+                child: PopularFoodNearby(),
+                // ListView(
+                //   scrollDirection: Axis.horizontal,
+                //   children: <Widget>[
+                //     Container(width: 160.0, color: Colors.red),
+                //     Container(width: 160.0, color: Colors.blue),
+                //     Container(width: 160.0, color: Colors.green),
+                //     Container(width: 160.0, color: Colors.yellow),
+                //     Container(width: 160.0, color: Colors.orange),
+                //   ],
+                // ),
               ),
             ),
             SizedBox(height: 10,),

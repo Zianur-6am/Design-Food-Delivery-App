@@ -3,14 +3,8 @@ import 'package:design_food_delivery_app/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class BottomNavBar extends StatefulWidget {
-  const BottomNavBar({super.key});
-
-  @override
-  State<BottomNavBar> createState() => _BottomNavBarState();
-}
-
-class _BottomNavBarState extends State<BottomNavBar> {
+class BottomNavBar extends StatelessWidget {
+  // const BottomNavBar({super.key});
 
   BottomNavController bottomNavController = Get.put(BottomNavController());
 
@@ -22,7 +16,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         builder: (BottomNavController controller){
         return IndexedStack(
           index: bottomNavController.selectedIndex,
-          children: [
+          children: const [
             Home(),
             Center(child: Text('Favorite Page')),
             Center(child: Text('Edit Note Page')),
@@ -50,76 +44,79 @@ class _BottomNavBarState extends State<BottomNavBar> {
         height: 60,
         color: Colors.white,
         notchMargin: 5,
-        child: Row(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                IconButton(
-                  icon: GetBuilder(
-                      builder: (BottomNavController controller){
-                        return Icon(
-                          Icons.home,
-                          color: bottomNavController.selectedIndex == 0 ? Colors.green : Colors.black,
-                        );
-                  }),
-                  onPressed: () {
-                    bottomNavController.changeTabIndex(0);
-                  },
-                ),
+        child: Row(mainAxisSize: MainAxisSize.max, children: [
 
-                Padding(
-                  padding: const EdgeInsets.only(left: 30),
-                  child: IconButton(
+
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  IconButton(
+                    icon: GetBuilder(
+                        builder: (BottomNavController controller){
+                          return Icon(
+                            Icons.home,
+                            color: bottomNavController.selectedIndex == 0 ? Colors.green : Colors.black,
+                            size: 30,
+                          );
+                    }),
+                    onPressed: () {
+                      bottomNavController.changeTabIndex(0);
+                    },
+                  ),
+              
+                  IconButton(
                     icon: GetBuilder(
                         builder: (BottomNavController controller){
                           return Icon(
                             Icons.favorite,
                             color: bottomNavController.selectedIndex == 1 ? Colors.green : Colors.black,
+                            size: 30,
                           );
                         }),
                     onPressed: () {
                       bottomNavController.changeTabIndex(1);
                     },
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
 
-            Expanded(child: Text('')),
+            Expanded(child: Container()),
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 30),
-                  child: IconButton(
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  IconButton(
                     icon: GetBuilder(
                         builder: (BottomNavController controller){
                           return Icon(
                             Icons.edit_note_rounded,
                             color: bottomNavController.selectedIndex == 2 ? Colors.green : Colors.black,
+                            size: 30,
                           );
                         }),
                     onPressed: () {
                       bottomNavController.changeTabIndex(2);
                     },
                   ),
-                ),
-              ],
-            ),
-            IconButton(
-              icon: GetBuilder(
-                  builder: (BottomNavController controller){
-                    return Icon(
-                      Icons.menu,
-                      color: bottomNavController.selectedIndex == 3 ? Colors.green : Colors.black,
-                    );
-                  }),
-              onPressed: () {
-                bottomNavController.changeTabIndex(3);
-              },
+              
+                  IconButton(
+                    icon: GetBuilder(
+                        builder: (BottomNavController controller){
+                          return Icon(
+                            Icons.menu,
+                            color: bottomNavController.selectedIndex == 3 ? Colors.green : Colors.black,
+                            size: 30,
+                          );
+                        }),
+                    onPressed: () {
+                      bottomNavController.changeTabIndex(3);
+                    },
+                  ),
+                ],
+              ),
             ),
           ],
         ),
