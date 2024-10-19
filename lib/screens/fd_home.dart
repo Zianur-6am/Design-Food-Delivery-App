@@ -4,6 +4,7 @@ import 'package:design_food_delivery_app/controllers/food_campaign_controller.da
 import 'package:design_food_delivery_app/controllers/popular_food_controller.dart';
 import 'package:design_food_delivery_app/widget/banners.dart';
 import 'package:design_food_delivery_app/widget/categories.dart';
+import 'package:design_food_delivery_app/widget/food_campaign.dart';
 import 'package:design_food_delivery_app/widget/popular_food_nearby.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,8 +17,10 @@ class FDHome extends StatefulWidget {
 class _FDHomeState extends State<FDHome> {
   // const FDHome({super.key});
   CategoryController categoryController = Get.put(CategoryController());
-  FoodCampaignController foodCampaignController = Get.put(FoodCampaignController());
-  PopularFoodController popularFoodController = Get.put(PopularFoodController());
+  FoodCampaignController foodCampaignController = Get.put(
+      FoodCampaignController());
+  PopularFoodController popularFoodController = Get.put(
+      PopularFoodController());
   BannerController bannerController = Get.put(BannerController());
 
   @override
@@ -126,7 +129,7 @@ class _FDHomeState extends State<FDHome> {
                     Text(
                       'Categories',
                       style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
 
                     Expanded(
@@ -169,7 +172,7 @@ class _FDHomeState extends State<FDHome> {
                     Text(
                       'Popular Food Nearby',
                       style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
 
                     Expanded(
@@ -222,7 +225,7 @@ class _FDHomeState extends State<FDHome> {
                     Text(
                       'Food Campaign',
                       style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
 
                     Expanded(
@@ -260,6 +263,4 @@ class _FDHomeState extends State<FDHome> {
       ),
     );
   }
-
-  FoodCampaign() {}
 }

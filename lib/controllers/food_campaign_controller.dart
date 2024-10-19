@@ -1,6 +1,7 @@
 
 import 'package:design_food_delivery_app/models/food_campaign_model.dart';
 import 'package:design_food_delivery_app/repository/home_repository.dart';
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 
 class FoodCampaignController extends GetxController{
@@ -11,6 +12,9 @@ class FoodCampaignController extends GetxController{
     try{
       List<FoodCampaignModel>? fetchedList = await HomeRepository.getFoodCampaign();
 
+      // print('======================>>>>>>>>>>>>>${fetchedList}');
+
+
       if(fetchedList != null){
         foodCampaignList = fetchedList;
       }
@@ -20,7 +24,9 @@ class FoodCampaignController extends GetxController{
 
       update();
     }catch(e){
-      print('Error fetching food campaign: $e');
+      if (kDebugMode) {
+        print('Error fetching food campaign: $e');
+      }
     }
   }
 
