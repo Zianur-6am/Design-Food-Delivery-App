@@ -1,5 +1,6 @@
+
 import 'package:design_food_delivery_app/controllers/nav_controller.dart';
-import 'package:design_food_delivery_app/screens/home.dart';
+import 'package:design_food_delivery_app/screens/fd_home.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,11 +17,11 @@ class BottomNavBar extends StatelessWidget {
         builder: (BottomNavController controller){
         return IndexedStack(
           index: bottomNavController.selectedIndex,
-          children: const [
-            Home(),
-            Center(child: Text('Favorite Page')),
-            Center(child: Text('Edit Note Page')),
-            Center(child: Text('Menu Page')),
+          children: [
+            FDHome(),
+            const Center(child: Text('Favorite Page')),
+            const Center(child: Text('Edit Note Page')),
+            const Center(child: Text('Menu Page')),
           ],
         );
       },),
