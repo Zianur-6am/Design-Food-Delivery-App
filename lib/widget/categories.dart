@@ -34,7 +34,7 @@ class Categories extends StatelessWidget {
                      width: 60,
                      fit: BoxFit.contain,
                      imageUrl: categoryController.categoryList[index].imageFullUrl.toString(),
-                     placeholder: (context, url) => new CircularProgressIndicator(),
+                     placeholder: (context, url) => Center(child: new CircularProgressIndicator()),
                      errorWidget: (context, url, error) => new Icon(Icons.error),
                    ),
                  ),

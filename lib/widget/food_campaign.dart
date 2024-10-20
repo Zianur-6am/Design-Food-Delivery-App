@@ -18,7 +18,7 @@ class FoodCampaign extends StatelessWidget {
             itemCount: foodCampaignController.foodCampaignList.length,
             itemBuilder: (context, index){
               return SizedBox(
-                height: 100,
+                height: 110,
                 width: 250,
                 child: Card(
                   color: Colors.white,
@@ -30,9 +30,10 @@ class FoodCampaign extends StatelessWidget {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(10),
                             child: CachedNetworkImage(
+                              height: 80,
                               imageUrl: foodCampaignController.foodCampaignList[index].imageFullUrl.toString(),
                               fit: BoxFit.cover,
-                              placeholder: (context, url) => new CircularProgressIndicator(),
+                              placeholder: (context, url) => Center(child: new CircularProgressIndicator()),
                               errorWidget: (context, url, error) => new Icon(Icons.error),
 
                             ),

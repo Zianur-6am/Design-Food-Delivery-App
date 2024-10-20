@@ -29,7 +29,7 @@ class PopularFoodNearby extends StatelessWidget {
                           width: 200,
                           fit: BoxFit.fill,
                           imageUrl: popularFoodController.productList[index].imageFullUrl.toString(),
-                          placeholder: (context, url) => new CircularProgressIndicator(),
+                          placeholder: (context, url) => Center(child: new CircularProgressIndicator()),
                           errorWidget: (context, url, error) => new Icon(Icons.error),
                         ),
                       ),
@@ -37,7 +37,7 @@ class PopularFoodNearby extends StatelessWidget {
                   Expanded(
                     flex: 4,
                     child: Padding(
-                      padding: const EdgeInsets.all(8),
+                      padding: const EdgeInsets.only(left: 8,right: 8),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
