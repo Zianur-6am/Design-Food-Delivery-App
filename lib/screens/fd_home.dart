@@ -16,12 +16,19 @@ class FDHome extends StatefulWidget {
 
 class _FDHomeState extends State<FDHome> {
   // const FDHome({super.key});
-  CategoryController categoryController = Get.put(CategoryController());
-  FoodCampaignController foodCampaignController = Get.put(
-      FoodCampaignController());
-  PopularFoodController popularFoodController = Get.put(
-      PopularFoodController());
-  BannerController bannerController = Get.put(BannerController());
+
+
+  // CategoryController categoryController = Get.put(CategoryController());
+  // FoodCampaignController foodCampaignController = Get.put(
+  //     FoodCampaignController());
+  // PopularFoodController popularFoodController = Get.put(
+  //     PopularFoodController());
+  // BannerController bannerController = Get.put(BannerController());
+
+  CategoryController categoryController = Get.find();
+  PopularFoodController popularFoodController = Get.find();
+  FoodCampaignController foodCampaignController = Get.find();
+  BannerController bannerController = Get.find();
 
   @override
   void initState() {
@@ -44,7 +51,6 @@ class _FDHomeState extends State<FDHome> {
               Icons.home,
               color: Colors.black38,
             ),
-
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.all(4),
@@ -125,13 +131,11 @@ class _FDHomeState extends State<FDHome> {
                     Text(
                       'Categories',
                       style:
-                      TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
-
                     Expanded(
                       child: Text(''),
                     ),
-
                     Text(
                       'View all',
                       style: TextStyle(
@@ -166,13 +170,11 @@ class _FDHomeState extends State<FDHome> {
                     Text(
                       'Popular Food Nearby',
                       style:
-                      TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
-
                     Expanded(
                       child: Text(''),
                     ),
-
                     Text(
                       'View all',
                       style: TextStyle(
@@ -207,13 +209,11 @@ class _FDHomeState extends State<FDHome> {
                     Text(
                       'Food Campaign',
                       style:
-                      TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
-
                     Expanded(
                       child: Text(''),
                     ),
-
                     Text(
                       'View all',
                       style: TextStyle(

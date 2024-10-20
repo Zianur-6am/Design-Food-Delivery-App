@@ -1,6 +1,7 @@
 
 import 'package:design_food_delivery_app/controllers/nav_controller.dart';
 import 'package:design_food_delivery_app/screens/fd_home.dart';
+import 'package:design_food_delivery_app/screens/theme_change.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -19,7 +20,7 @@ class BottomNavBar extends StatelessWidget {
           index: bottomNavController.selectedIndex,
           children: [
             FDHome(),
-            const Center(child: Text('Favorite Page')),
+            ThemeChange(),
             const Center(child: Text('Edit Note Page')),
             const Center(child: Text('Menu Page')),
           ],

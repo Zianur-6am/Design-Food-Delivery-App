@@ -1,9 +1,9 @@
 import 'dart:convert';
-import 'package:design_food_delivery_app/models/banner_model.dart';
-import 'package:design_food_delivery_app/models/category_model.dart';
-import 'package:design_food_delivery_app/models/food_campaign_model.dart';
-import 'package:design_food_delivery_app/models/popular_food_model.dart';
-import 'package:design_food_delivery_app/utils/app_constant.dart';
+import 'package:design_food_delivery_app/domain/models/banner_model.dart';
+import 'package:design_food_delivery_app/domain/models/category_model.dart';
+import 'package:design_food_delivery_app/domain/models/food_campaign_model.dart';
+import 'package:design_food_delivery_app/domain/models/popular_food_model.dart';
+import 'package:design_food_delivery_app/utils/app_constants.dart';
 import 'package:http/http.dart' as http;
 
 class HomeRepository {
@@ -13,7 +13,7 @@ class HomeRepository {
   static Future<List<CategoriesModel>?> getCategory() async {
     List<CategoriesModel>? categoryList;
     var response = await client.get(
-        Uri.parse('${AppContants.baseUrl}${AppContants.categoryUri}'),
+        Uri.parse('${AppConstants.baseUrl}${AppConstants.categoryUri}'),
         headers: {
           'Content-Type': 'application/json; charset=UTF-8',
           'zoneId': '[1]',
@@ -46,7 +46,7 @@ class HomeRepository {
   static Future<List<FoodCampaignModel>?> getFoodCampaign() async {
     List<FoodCampaignModel>? foodCampaignList;
     var response = await client.get(
-        Uri.parse('${AppContants.baseUrl}${AppContants.foodCampaignUri}'),
+        Uri.parse('${AppConstants.baseUrl}${AppConstants.foodCampaignUri}'),
         headers: {
           'Content-Type': 'application/json; charset=UTF-8',
           'zoneId': '[1]',
@@ -79,7 +79,7 @@ class HomeRepository {
   static Future<List<Products>?> getPopularFood() async {
     PopularFoodModel? popularFoodModel;
     var response = await client.get(
-        Uri.parse('${AppContants.baseUrl}${AppContants.popularProductUri}'),
+        Uri.parse('${AppConstants.baseUrl}${AppConstants.popularProductUri}'),
         headers: {
           'Content-Type': 'application/json; charset=UTF-8',
           'zoneId': '[1]',
@@ -111,7 +111,7 @@ class HomeRepository {
   static Future<List<Banners>?> getBanner() async {
     BannerModel? bannerModel;
     var response = await client.get(
-        Uri.parse('${AppContants.baseUrl}${AppContants.bannerUri}'),
+        Uri.parse('${AppConstants.baseUrl}${AppConstants.bannerUri}'),
         headers: {
           'Content-Type': 'application/json; charset=UTF-8',
           'zoneId': '[1]',

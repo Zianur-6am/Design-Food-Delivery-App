@@ -1,6 +1,6 @@
-import 'package:design_food_delivery_app/models/category_model.dart';
-import 'package:design_food_delivery_app/repository/home_repository.dart';
 
+import 'package:design_food_delivery_app/domain/models/category_model.dart';
+import 'package:design_food_delivery_app/domain/repository/home_repository.dart';
 import 'package:get/get.dart';
 
 class CategoryController extends GetxController {

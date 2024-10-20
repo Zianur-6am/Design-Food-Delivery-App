@@ -1,7 +1,7 @@
 
-import 'package:design_food_delivery_app/models/banner_model.dart';
-import 'package:design_food_delivery_app/repository/home_repository.dart';
 
+import 'package:design_food_delivery_app/domain/models/banner_model.dart';
+import 'package:design_food_delivery_app/domain/repository/home_repository.dart';
 import 'package:get/get.dart';
 
 class BannerController extends GetxController {
