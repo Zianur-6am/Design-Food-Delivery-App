@@ -3,14 +3,15 @@ import 'package:design_food_delivery_app/domain/models/banner_model.dart';
 import 'package:design_food_delivery_app/domain/models/category_model.dart';
 import 'package:design_food_delivery_app/domain/models/food_campaign_model.dart';
 import 'package:design_food_delivery_app/domain/models/popular_food_model.dart';
+import 'package:design_food_delivery_app/domain/repository/home_repository_interface.dart';
 import 'package:design_food_delivery_app/utils/app_constants.dart';
 import 'package:http/http.dart' as http;
 
-class HomeRepository {
+class HomeRepository implements HomeRepositoryInterface {
   static var client = http.Client();
 
   ///category
-  static Future<List<CategoriesModel>?> getCategory() async {
+ Future<List<CategoriesModel>?> getCategory() async {
     List<CategoriesModel>? categoryList;
     var response = await client.get(
         Uri.parse('${AppConstants.baseUrl}${AppConstants.categoryUri}'),
@@ -43,7 +44,7 @@ class HomeRepository {
   }
 
   ///campaign
-  static Future<List<FoodCampaignModel>?> getFoodCampaign() async {
+  Future<List<FoodCampaignModel>?> getFoodCampaign() async {
     List<FoodCampaignModel>? foodCampaignList;
     var response = await client.get(
         Uri.parse('${AppConstants.baseUrl}${AppConstants.foodCampaignUri}'),
@@ -76,7 +77,7 @@ class HomeRepository {
   }
 
   ///popular food
-  static Future<List<Products>?> getPopularFood() async {
+  Future<List<Products>?> getPopularFood() async {
     PopularFoodModel? popularFoodModel;
     var response = await client.get(
         Uri.parse('${AppConstants.baseUrl}${AppConstants.popularProductUri}'),
@@ -108,7 +109,7 @@ class HomeRepository {
 
 
   ///banner
-  static Future<List<Banners>?> getBanner() async {
+  Future<List<Banners>?> getBanner() async {
     BannerModel? bannerModel;
     var response = await client.get(
         Uri.parse('${AppConstants.baseUrl}${AppConstants.bannerUri}'),

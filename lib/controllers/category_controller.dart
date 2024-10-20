@@ -8,6 +8,7 @@ class CategoryController extends GetxController {
 
   Future<void> getCategories() async {
     try {
+
       // Attempt to fetch categories
       List<CategoriesModel>? fetchedCategories = await HomeRepository.getCategory();
 
