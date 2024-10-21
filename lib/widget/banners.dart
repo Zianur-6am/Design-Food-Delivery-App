@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Banners extends StatelessWidget {
+
   BannerController bannerController = Get.find();
 
   @override

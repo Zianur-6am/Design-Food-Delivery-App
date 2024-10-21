@@ -1,16 +1,21 @@
 
 import 'package:design_food_delivery_app/domain/models/category_model.dart';
 import 'package:design_food_delivery_app/domain/repository/home_repository.dart';
+import 'package:design_food_delivery_app/domain/service/category_service_interface.dart';
 import 'package:get/get.dart';
 
 class CategoryController extends GetxController {
   List<CategoriesModel> categoryList = [];
 
+  final CategoryServiceInterface categoryServiceInterface;
+
+  CategoryController({required this.categoryServiceInterface});
+
   Future<void> getCategories() async {
     try {
 
       // Attempt to fetch categories
-      List<CategoriesModel>? fetchedCategories = await HomeRepository.getCategory();
+      List<CategoriesModel>? fetchedCategories = await categoryServiceInterface.getCategory();
 
       // Ensure the list is not null before assigning
       if (fetchedCategories != null) {

@@ -4,9 +4,12 @@ import 'package:design_food_delivery_app/domain/repository/home_repository_inter
 import 'package:design_food_delivery_app/domain/service/banner_service_interface.dart';
 
 class BannerService implements BannerServiceInterface {
+  HomeRepositoryInterface homeRepositoryInterface;
+
+  BannerService({required this.homeRepositoryInterface});
+
   @override
   Future<List<Banners>?> getBanner() async {
-    HomeRepositoryInterface homeRepositoryInterface = HomeRepository();
 
     return await homeRepositoryInterface.getBanner();
   }

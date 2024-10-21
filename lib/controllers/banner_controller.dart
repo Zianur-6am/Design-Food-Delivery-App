@@ -12,10 +12,13 @@ class BannerController extends GetxController {
 
   int currentPage = 0;
 
+  BannerServiceInterface bannerServiceInterface;
+
+  BannerController({required this.bannerServiceInterface});
+
   Future<void> getBannerList() async {
 
     try{
-      BannerServiceInterface bannerServiceInterface = BannerService();
 
       List<Banners>? fetchedList = await bannerServiceInterface.getBanner();
 

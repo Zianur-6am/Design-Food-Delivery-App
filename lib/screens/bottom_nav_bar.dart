@@ -20,9 +20,9 @@ class BottomNavBar extends StatelessWidget {
           index: bottomNavController.selectedIndex,
           children: [
             FDHome(),
-            ThemeChange(),
             const Center(child: Text('Edit Note Page')),
             const Center(child: Text('Menu Page')),
+            ThemeChange(),
           ],
         );
       },),

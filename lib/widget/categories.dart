@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:design_food_delivery_app/controllers/category_controller.dart';
+import 'package:design_food_delivery_app/controllers/theme_controller.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -27,7 +28,7 @@ class Categories extends StatelessWidget {
                  children: [
                  Card(
                    elevation: 10,
-                   color: Colors.white,
+                   color: Get.find<ThemeController>().darkTheme ? Theme.of(context).cardColor : Colors.black,
                    //Use cacheImageNetwork here
                    child: CachedNetworkImage(
                      height: 60,

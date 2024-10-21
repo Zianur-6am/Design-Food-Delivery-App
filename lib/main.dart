@@ -17,11 +17,6 @@ import 'helper/get_di.dart' as di;
 void main() {
   di.init();
 
-  Get.put(CategoryController());
-  Get.put(FoodCampaignController());
-  Get.put(PopularFoodController());
-  Get.put(BannerController());
-
   runApp(const MyApp());
 
 }

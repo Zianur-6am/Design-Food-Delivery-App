@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:design_food_delivery_app/controllers/popular_food_controller.dart';
+import 'package:design_food_delivery_app/controllers/theme_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -19,7 +20,7 @@ class PopularFoodNearby extends StatelessWidget {
           return SizedBox(
             width: 200,
             child: Card(
-              color: Colors.white,
+              color: Get.find<ThemeController>().darkTheme ? Theme.of(context).cardColor : Theme.of(context).cardColor,
               child: Column(
                 children: [
                   Expanded(
@@ -44,13 +45,21 @@ class PopularFoodNearby extends StatelessWidget {
                           Expanded(
                             child: Text(
                               '${popularFoodController.productList[index].name}',
-                              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16,), overflow: TextOverflow.ellipsis,),
+                              style: TextStyle(fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                color: Get.find<ThemeController>().darkTheme ? Colors.white: Colors.black,
+                              ),
+                              overflow: TextOverflow.ellipsis,),
                           ),
 
                           Expanded(
                             child: Text(
                               '${popularFoodController.productList[index].restaurantName}',
-                              style: TextStyle(fontSize: 12, color: Colors.black38,), overflow: TextOverflow.ellipsis,),
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Get.find<ThemeController>().darkTheme ? Colors.white: Colors.black,
+                              ),
+                              overflow: TextOverflow.ellipsis,),
                           ),
 
                           Row(
@@ -62,7 +71,11 @@ class PopularFoodNearby extends StatelessWidget {
                                     Expanded(
                                     child: Text(
                                       '\$${popularFoodController.productList[index].price}',
-                                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold,),
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
+                                        color: Get.find<ThemeController>().darkTheme ? Colors.white: Colors.black,
+                                      ),
                                       overflow: TextOverflow.ellipsis,),
                                   ),
                                 ],),
@@ -85,7 +98,13 @@ class PopularFoodNearby extends StatelessWidget {
                                   Expanded(
                                     child: Text(
                                       '${popularFoodController.productList[index].avgRating?.toStringAsFixed(1)}',
-                                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold,), overflow: TextOverflow.ellipsis,),
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
+                                        color: Get.find<ThemeController>().darkTheme ? Colors.white: Colors.black,
+                                      ),
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
                                   ),
                                 ],),
                               ),
