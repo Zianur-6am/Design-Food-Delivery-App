@@ -1,5 +1,3 @@
-import 'package:design_food_delivery_app/themes/dark_theme.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ThemeController extends GetxController implements GetxService{

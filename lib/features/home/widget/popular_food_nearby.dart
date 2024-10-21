@@ -8,6 +8,8 @@ class PopularFoodNearby extends StatelessWidget {
 
   PopularFoodController popularFoodController = Get.find();
 
+  PopularFoodNearby({super.key});
+
   @override
   Widget build(BuildContext context) {
     // print('==================================+>>>>>>>${popularFoodController.productList.length}');
@@ -30,8 +32,8 @@ class PopularFoodNearby extends StatelessWidget {
                           width: 200,
                           fit: BoxFit.fill,
                           imageUrl: popularFoodController.productList[index].imageFullUrl.toString(),
-                          placeholder: (context, url) => Center(child: new CircularProgressIndicator()),
-                          errorWidget: (context, url, error) => new Icon(Icons.error),
+                          placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
+                          errorWidget: (context, url, error) => const Icon(Icons.error),
                         ),
                       ),
                   ),
@@ -90,7 +92,7 @@ class PopularFoodNearby extends StatelessWidget {
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
-                                  Icon(
+                                  const Icon(
                                     Icons.star,
                                     color: Colors.green,
                                   ),

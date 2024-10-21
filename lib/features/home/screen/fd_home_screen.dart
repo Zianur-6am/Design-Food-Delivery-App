@@ -10,6 +10,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class FDHome extends StatefulWidget {
+  const FDHome({super.key});
+
   @override
   State<FDHome> createState() => _FDHomeState();
 }
@@ -45,7 +47,7 @@ class _FDHomeState extends State<FDHome> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Row(
+        title: const Row(
           children: [
             Icon(
               Icons.home,
@@ -53,7 +55,7 @@ class _FDHomeState extends State<FDHome> {
             ),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.all(4),
+                padding: EdgeInsets.all(4),
                 child: Text(
                   '76,A eighth evenue, New York, US',
                   style: TextStyle(color: Colors.black38, fontSize: 16),
@@ -63,9 +65,9 @@ class _FDHomeState extends State<FDHome> {
             ),
           ],
         ),
-        actions: [
+        actions: const [
           Padding(
-            padding: const EdgeInsets.only(right: 15),
+            padding: EdgeInsets.only(right: 15),
             child: Icon(Icons.notifications),
           ),
         ],
@@ -94,7 +96,7 @@ class _FDHomeState extends State<FDHome> {
                             child: TextField(
                               textInputAction: TextInputAction.go,
                               onSubmitted: (value) {},
-                              decoration: InputDecoration(
+                              decoration: const InputDecoration(
                                 hintText: "Search food or restaurent here.....",
                                 hintStyle: TextStyle(color: Colors.black38),
                                 border: InputBorder.none,
@@ -102,7 +104,7 @@ class _FDHomeState extends State<FDHome> {
                             ),
                           ),
                         ),
-                        Expanded(
+                        const Expanded(
                             flex: 1,
                             child: Icon(
                               Icons.search,
@@ -113,19 +115,19 @@ class _FDHomeState extends State<FDHome> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
 
               //banner
               Banners(),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
 
               //categories
-              Padding(
-                padding: const EdgeInsets.only(left: 10, right: 10),
+              const Padding(
+                padding: EdgeInsets.only(left: 10, right: 10),
                 child: Row(
                   children: [
                     Text(
@@ -147,7 +149,7 @@ class _FDHomeState extends State<FDHome> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
 
@@ -158,13 +160,13 @@ class _FDHomeState extends State<FDHome> {
                   child: Categories(),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
 
               //Popular Food Nearby
-              Padding(
-                padding: const EdgeInsets.only(left: 10, right: 10),
+              const Padding(
+                padding: EdgeInsets.only(left: 10, right: 10),
                 child: Row(
                   children: [
                     Text(
@@ -186,24 +188,24 @@ class _FDHomeState extends State<FDHome> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
 
               Padding(
                 padding: const EdgeInsets.only(left: 10),
-                child: Container(
+                child: SizedBox(
                   height: 200,
                   child: PopularFoodNearby(),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
 
               //Food Campaign
-              Padding(
-                padding: const EdgeInsets.only(left: 10, right: 10),
+              const Padding(
+                padding: EdgeInsets.only(left: 10, right: 10),
                 child: Row(
                   children: [
                     Text(
@@ -225,18 +227,18 @@ class _FDHomeState extends State<FDHome> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
 
               Padding(
                 padding: const EdgeInsets.only(left: 10),
-                child: Container(
+                child: SizedBox(
                   height: 110,
                   child: FoodCampaign(),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
             ],

@@ -10,6 +10,8 @@ class BottomNavBar extends StatelessWidget {
 
   BottomNavController bottomNavController = Get.put(BottomNavController());
 
+  BottomNavBar({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +21,7 @@ class BottomNavBar extends StatelessWidget {
         return IndexedStack(
           index: bottomNavController.selectedIndex,
           children: [
-            FDHome(),
+            const FDHome(),
             const Center(child: Text('Edit Note Page')),
             const Center(child: Text('Menu Page')),
             ThemeChange(),
@@ -31,10 +33,10 @@ class BottomNavBar extends StatelessWidget {
       floatingActionButton: FloatingActionButton.large(
         backgroundColor: Colors.green,
         onPressed: () {},
-        child: const Icon(Icons.local_grocery_store, color: Colors.white,),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(100),
         ),
+        child: const Icon(Icons.local_grocery_store, color: Colors.white,),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
 

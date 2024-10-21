@@ -4,11 +4,12 @@ import 'package:design_food_delivery_app/features/theme/controller/theme_control
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/simple/get_state.dart';
 
 class FoodCampaign extends StatelessWidget {
 
   FoodCampaignController foodCampaignController = Get.find();
+
+  FoodCampaign({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,8 +35,8 @@ class FoodCampaign extends StatelessWidget {
                               height: 80,
                               imageUrl: foodCampaignController.foodCampaignList[index].imageFullUrl.toString(),
                               fit: BoxFit.cover,
-                              placeholder: (context, url) => Center(child: new CircularProgressIndicator()),
-                              errorWidget: (context, url, error) => new Icon(Icons.error),
+                              placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
+                              errorWidget: (context, url, error) => const Icon(Icons.error),
 
                             ),
                           ),
@@ -71,7 +72,7 @@ class FoodCampaign extends StatelessWidget {
                               ),
                             ),
 
-                            Row(
+                            const Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Icon(Icons.star, color: Colors.green, size: 14,),
@@ -109,7 +110,7 @@ class FoodCampaign extends StatelessWidget {
                                       ],),
                                   ),
 
-                                  Expanded(child: Row(
+                                  const Expanded(child: Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
                                       Icon(Icons.add),

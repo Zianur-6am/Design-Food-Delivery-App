@@ -7,10 +7,12 @@ class ThemeChange extends StatelessWidget {
 
   ThemeController themeController = Get.find();
 
+  ThemeChange({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Change Theme'),),
+      appBar: AppBar(title: const Text('Change Theme'),),
       body: Center(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -20,7 +22,7 @@ class ThemeChange extends StatelessWidget {
               onPressed: (){
                 themeController.toggleTheme();
               },
-              child: Text('Change Theme'),)
+              child: const Text('Change Theme'),)
           ],
         ),
       ),

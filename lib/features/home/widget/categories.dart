@@ -4,7 +4,6 @@ import 'package:design_food_delivery_app/features/theme/controller/theme_control
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class Categories extends StatelessWidget {
   Categories({super.key});
@@ -22,7 +21,7 @@ class Categories extends StatelessWidget {
             itemCount: categoryController.categoryList.length,
 
             itemBuilder: (context, index){
-             return Container(
+             return SizedBox(
                width: 80,
                child: Column(
                  children: [
@@ -35,15 +34,15 @@ class Categories extends StatelessWidget {
                      width: 60,
                      fit: BoxFit.contain,
                      imageUrl: categoryController.categoryList[index].imageFullUrl.toString(),
-                     placeholder: (context, url) => Center(child: new CircularProgressIndicator()),
-                     errorWidget: (context, url, error) => new Icon(Icons.error),
+                     placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
+                     errorWidget: (context, url, error) => const Icon(Icons.error),
                    ),
                  ),
 
                  Padding(
                    padding: const EdgeInsets.only(top: 5),
                    child: Text(
-                     '${categoryController.categoryList[index]!.name.toString()}',
+                     categoryController.categoryList[index].name.toString(),
                      style: TextStyle(
                        fontSize: 14,
                        fontWeight: FontWeight.bold,

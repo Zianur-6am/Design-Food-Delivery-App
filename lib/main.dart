@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
         // initialRoute: '/home',
 
         getPages: [
-          GetPage(name: '/home', page: ()=> FDHome())
+          GetPage(name: '/home', page: ()=> const FDHome())
         ],
 
         home: BottomNavBar(),

@@ -1,12 +1,11 @@
 import 'package:design_food_delivery_app/utils/app_constants.dart';
-import 'package:get/get_connect/http/src/response/response.dart';
 import 'package:http/http.dart' as http;
 
 
 ///You can use this Just need to modify the home_repository accordingly
 class ApiClient {
   static var client = http.Client();
-  static final appBaseUrl = AppConstants.baseUrl;
+  static const appBaseUrl = AppConstants.baseUrl;
 
   static Future<dynamic> getResponse({required String particularUrl}) async {
     try {

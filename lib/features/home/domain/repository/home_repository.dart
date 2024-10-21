@@ -12,7 +12,8 @@ class HomeRepository implements HomeRepositoryInterface {
   static var client = http.Client();
 
   ///category
- Future<List<CategoriesModel>?> getCategory() async {
+ @override
+  Future<List<CategoriesModel>?> getCategory() async {
     List<CategoriesModel>? categoryList;
     var response = await client.get(
         Uri.parse('${AppConstants.baseUrl}${AppConstants.categoryUri}'),
@@ -32,9 +33,9 @@ class HomeRepository implements HomeRepositoryInterface {
       List<dynamic> jsonString = jsonDecode(response.body);
       // dynamic jsonString = jsonDecode(response.body);//works
 
-      jsonString.forEach((category) {
-        categoryList!.add(CategoriesModel.fromJson(category));
-      });
+      for (var category in jsonString) {
+        categoryList.add(CategoriesModel.fromJson(category));
+      }
 
       // print('${categoryList}');
 
@@ -45,6 +46,7 @@ class HomeRepository implements HomeRepositoryInterface {
   }
 
   ///campaign
+  @override
   Future<List<FoodCampaignModel>?> getFoodCampaign() async {
     List<FoodCampaignModel>? foodCampaignList;
     var response = await client.get(
@@ -65,9 +67,9 @@ class HomeRepository implements HomeRepositoryInterface {
       List<dynamic> jsonString = jsonDecode(response.body);
       // dynamic jsonString = jsonDecode(response.body);
 
-      jsonString.forEach((food) {
-        foodCampaignList!.add(FoodCampaignModel.fromJson(food));
-      });
+      for (var food in jsonString) {
+        foodCampaignList.add(FoodCampaignModel.fromJson(food));
+      }
 
       // print('${foodCampaignList}');
 
@@ -78,6 +80,7 @@ class HomeRepository implements HomeRepositoryInterface {
   }
 
   ///popular food
+  @override
   Future<List<Products>?> getPopularFood() async {
     PopularFoodModel? popularFoodModel;
     var response = await client.get(
@@ -110,6 +113,7 @@ class HomeRepository implements HomeRepositoryInterface {
 
 
   ///banner
+  @override
   Future<List<Banners>?> getBanner() async {
     BannerModel? bannerModel;
     var response = await client.get(

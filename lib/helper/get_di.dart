@@ -1,5 +1,4 @@
 
-import 'dart:convert';
 
 import 'package:design_food_delivery_app/features/home/controller/banner/banner_controller.dart';
 import 'package:design_food_delivery_app/features/home/controller/categories/category_controller.dart';
@@ -16,7 +15,6 @@ import 'package:design_food_delivery_app/features/home/domain/service/foodcampai
 import 'package:design_food_delivery_app/features/home/domain/service/foodcampaign/food_campaign_service_interface.dart';
 import 'package:design_food_delivery_app/features/home/domain/service/popularfood/popular_food_service.dart';
 import 'package:design_food_delivery_app/features/home/domain/service/popularfood/popular_food_service_interface.dart';
-import 'package:design_food_delivery_app/features/home/widget/food_campaign.dart';
 import 'package:get/get.dart';
 
 void init() async {
