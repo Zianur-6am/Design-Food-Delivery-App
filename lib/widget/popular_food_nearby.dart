@@ -57,7 +57,7 @@ class PopularFoodNearby extends StatelessWidget {
                               '${popularFoodController.productList[index].restaurantName}',
                               style: TextStyle(
                                 fontSize: 12,
-                                color: Get.find<ThemeController>().darkTheme ? Colors.white: Colors.black,
+                                color: Get.find<ThemeController>().darkTheme ? Colors.white: Colors.black38,
                               ),
                               overflow: TextOverflow.ellipsis,),
                           ),

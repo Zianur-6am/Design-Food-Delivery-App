@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:design_food_delivery_app/controllers/food_campaign_controller.dart';
+import 'package:design_food_delivery_app/controllers/theme_controller.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -21,7 +22,7 @@ class FoodCampaign extends StatelessWidget {
                 height: 110,
                 width: 250,
                 child: Card(
-                  color: Colors.white,
+                  color: Get.find<ThemeController>().darkTheme ? Theme.of(context).cardColor : Theme.of(context).cardColor,
                   child: Row(children: [
                     Expanded(
                         flex: 1,
@@ -51,13 +52,23 @@ class FoodCampaign extends StatelessWidget {
                             Expanded(
                               child: Text(
                                 '${foodCampaignController.foodCampaignList[index].name}',
-                                style: TextStyle(fontWeight: FontWeight.bold), overflow: TextOverflow.ellipsis,),
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Get.find<ThemeController>().darkTheme ? Colors.white: Colors.black,
+                                ),
+                                overflow: TextOverflow.ellipsis,
+                              ),
                             ),
 
                             Expanded(
                               child: Text(
                                 '${foodCampaignController.foodCampaignList[index].restaurantName}',
-                                style: TextStyle(fontSize: 10, color: Colors.black38), overflow: TextOverflow.ellipsis,),
+                                style: TextStyle(
+                                    fontSize: 10,
+                                  color: Get.find<ThemeController>().darkTheme ? Colors.white: Colors.black38,
+                                ),
+                                overflow: TextOverflow.ellipsis,
+                              ),
                             ),
 
                             Row(
@@ -81,13 +92,20 @@ class FoodCampaign extends StatelessWidget {
                                       children: [
                                         Expanded(
                                             child: Text('\$${foodCampaignController.foodCampaignList[index].price}',
-                                              style: TextStyle(fontWeight: FontWeight.bold),
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                color: Get.find<ThemeController>().darkTheme ? Colors.white: Colors.black,
+                                              ),
                                               overflow: TextOverflow.ellipsis,)
                                         ),
 
                                         Text(
                                           '\$${foodCampaignController.foodCampaignList[index].discount}',
-                                          style: TextStyle(color: Colors.black38, decoration: TextDecoration.lineThrough),),
+                                          style: TextStyle(
+                                              color: Get.find<ThemeController>().darkTheme ? Colors.white: Colors.black38,
+                                              decoration: TextDecoration.lineThrough
+                                          ),
+                                        ),
                                       ],),
                                   ),
 
