@@ -32,7 +32,9 @@ class MyApp extends StatelessWidget {
         //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         // ),
 
+        ///For in app theme change
         theme: themeController.darkTheme ? dark : light,
+
 
         ///Routing
         // initialRoute: '/home',

@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 class ThemeChange extends StatelessWidget {
   // const ThemeChange({super.key});
 
-  ThemeController themeController = Get.put(ThemeController());
+  ThemeController themeController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -15,19 +15,12 @@ class ThemeChange extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(
-              onPressed: (){
-                themeController.toggleTheme();
-              },
-              child: Text('Dark Theme'),),
-
-            SizedBox(width: 20,),
 
             ElevatedButton(
               onPressed: (){
                 themeController.toggleTheme();
               },
-              child: Text('Light Theme'),)
+              child: Text('Change Theme'),)
           ],
         ),
       ),
