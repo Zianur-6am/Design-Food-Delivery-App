@@ -1,12 +1,9 @@
-import 'package:design_food_delivery_app/controllers/banner_controller.dart';
-import 'package:design_food_delivery_app/controllers/category_controller.dart';
-import 'package:design_food_delivery_app/controllers/food_campaign_controller.dart';
-import 'package:design_food_delivery_app/controllers/popular_food_controller.dart';
-import 'package:design_food_delivery_app/controllers/theme_controller.dart';
-import 'package:design_food_delivery_app/screens/bottom_nav_bar.dart';
-import 'package:design_food_delivery_app/screens/fd_home.dart';
-import 'package:design_food_delivery_app/theme/dark_theme.dart';
-import 'package:design_food_delivery_app/theme/light_theme.dart';
+
+import 'package:design_food_delivery_app/features/theme/controller/theme_controller.dart';
+import 'package:design_food_delivery_app/features/nav_bar/screen/bottom_nav_bar.dart';
+import 'package:design_food_delivery_app/features/home/screen/fd_home_screen.dart';
+import 'package:design_food_delivery_app/themes/dark_theme.dart';
+import 'package:design_food_delivery_app/themes/light_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'helper/get_di.dart' as di;
