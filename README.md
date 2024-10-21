@@ -22,7 +22,18 @@ This project fetches data using api and shows them on the UI for a food delivery
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Screenshot from 2024-10-21 13-59-18](https://github.com/user-attachments/assets/64aa857c-7d04-4257-8f00-3df0c0d6f07b)
+![Screenshot from 2024-10-21 13-59-30](https://github.com/user-attachments/assets/8b125a39-93fa-446a-bb08-0c6bebba6961)
+![Screenshot from 2024-10-21 13-59-50](https://github.com/user-attachments/assets/d62e46a5-5b10-41e2-b836-8de06a043653)
+![Screenshot from 2024-10-21 14-00-34](https://github.com/user-attachments/assets/26994361-8b79-4cdc-8aff-c577fa2fd267)
+![Screenshot from 2024-10-21 14-08-59](https://github.com/user-attachments/assets/fe76d5c9-8512-4fc8-a0f1-0c9747d79116)
+![Screenshot from 2024-10-21 14-10-23](https://github.com/user-attachments/assets/51fd382d-aad3-4597-986f-279ed19aa6de)
+
+
+
+
+
+
 
 
 
@@ -91,9 +102,4 @@ Go to project root and execute the following command in console to run the proje
 ```http
   GET /api/v1/campaigns/item
 ```
-
-
-## Demo
-
-Insert gif or link to demo
 
