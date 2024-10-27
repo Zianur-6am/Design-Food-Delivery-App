@@ -7,8 +7,8 @@ import 'package:get/get.dart';
 
 class FoodCampaign extends StatelessWidget {
 
-  FoodCampaignController foodCampaignController = Get.find();
-  ThemeController themeController = Get.find();
+  // FoodCampaignController foodCampaignController = Get.find();
+  // ThemeController themeController = Get.find();
 
   FoodCampaign({super.key});
 

@@ -6,8 +6,8 @@ import 'package:get/get.dart';
 
 class PopularFoodNearby extends StatelessWidget {
 
-  PopularFoodController popularFoodController = Get.find();
-  ThemeController themeController = Get.find();
+  // PopularFoodController popularFoodController = Get.find(); //using the controller from builder so we don't need it
+  // ThemeController themeController = Get.find();
 
   PopularFoodNearby({super.key});
 
@@ -25,7 +25,7 @@ class PopularFoodNearby extends StatelessWidget {
             child: GetBuilder(
               builder: (ThemeController controller) {
                 return Card(
-                  color: Get.find<ThemeController>().darkTheme ? Colors.black : Colors.white,
+                  color: controller.darkTheme ? Colors.black : Colors.white,
                   child: Column(
                     children: [
                       Expanded(
@@ -52,7 +52,7 @@ class PopularFoodNearby extends StatelessWidget {
                                   '${popularFoodController.productList[index].name}',
                                   style: TextStyle(fontWeight: FontWeight.bold,
                                     fontSize: 16,
-                                    color: themeController.darkTheme ? Colors.white: Colors.black,
+                                    color: controller.darkTheme ? Colors.white: Colors.black,
                                   ),
                                   overflow: TextOverflow.ellipsis,),
                               ),
@@ -62,7 +62,7 @@ class PopularFoodNearby extends StatelessWidget {
                                   '${popularFoodController.productList[index].restaurantName}',
                                   style: TextStyle(
                                     fontSize: 12,
-                                    color: themeController.darkTheme ? Colors.white: Colors.black38,
+                                    color: controller.darkTheme ? Colors.white: Colors.black38,
                                   ),
                                   overflow: TextOverflow.ellipsis,),
                               ),
@@ -79,7 +79,7 @@ class PopularFoodNearby extends StatelessWidget {
                                           style: TextStyle(
                                             fontSize: 16,
                                             fontWeight: FontWeight.bold,
-                                            color: themeController.darkTheme ? Colors.white: Colors.black,
+                                            color: controller.darkTheme ? Colors.white: Colors.black,
                                           ),
                                           overflow: TextOverflow.ellipsis,),
                                       ),
@@ -106,7 +106,7 @@ class PopularFoodNearby extends StatelessWidget {
                                           style: TextStyle(
                                             fontSize: 16,
                                             fontWeight: FontWeight.bold,
-                                            color: themeController.darkTheme ? Colors.white: Colors.black,
+                                            color: controller.darkTheme ? Colors.white: Colors.black,
                                           ),
                                           overflow: TextOverflow.ellipsis,
                                         ),

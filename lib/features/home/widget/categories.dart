@@ -8,13 +8,13 @@ import 'package:get/get.dart';
 class Categories extends StatelessWidget {
   Categories({super.key});
 
-  CategoryController categoryController = Get.find();
+  // CategoryController categoryController = Get.find();
 
 
   @override
   Widget build(BuildContext context) {
     return GetBuilder(
-      builder: (CategoryController controller) {
+      builder: (CategoryController categoryController) {
         // print('============================>>>>>>>>>>>>>>>>${categoryController.categoryList.length}');
         return ListView.builder(
           scrollDirection: Axis.horizontal,
