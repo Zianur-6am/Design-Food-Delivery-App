@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 class FoodCampaign extends StatelessWidget {
 
   FoodCampaignController foodCampaignController = Get.find();
+  ThemeController themeController = Get.find();
 
   FoodCampaign({super.key});
 
@@ -22,26 +23,28 @@ class FoodCampaign extends StatelessWidget {
               return SizedBox(
                 height: 110,
                 width: 250,
-                child: Card(
-                  color: Get.find<ThemeController>().darkTheme ? Theme.of(context).cardColor : Theme.of(context).cardColor,
-                  child: Row(children: [
-                    Expanded(
-                        flex: 1,
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 8.0),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: CachedNetworkImage(
-                              height: 80,
-                              imageUrl: foodCampaignController.foodCampaignList[index].imageFullUrl.toString(),
-                              fit: BoxFit.cover,
-                              placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
-                              errorWidget: (context, url, error) => const Icon(Icons.error),
+                child: GetBuilder(
+                  builder: (ThemeController themeController) {
+                    return Card(
+                      color: themeController.darkTheme ? Colors.black : Colors.white,
+                      child: Row(children: [
+                        Expanded(
+                            flex: 1,
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 8.0),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(10),
+                                child: CachedNetworkImage(
+                                  height: 80,
+                                  imageUrl: foodCampaignController.foodCampaignList[index].imageFullUrl.toString(),
+                                  fit: BoxFit.cover,
+                                  placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
+                                  errorWidget: (context, url, error) => const Icon(Icons.error),
 
-                            ),
-                          ),
-                        )
-                    ),
+                                ),
+                              ),
+                            )
+                        ),
 
                     Expanded(
                       flex: 2,
@@ -66,21 +69,21 @@ class FoodCampaign extends StatelessWidget {
                                 '${foodCampaignController.foodCampaignList[index].restaurantName}',
                                 style: TextStyle(
                                     fontSize: 10,
-                                  color: Get.find<ThemeController>().darkTheme ? Colors.white: Colors.black38,
+                                  color: themeController.darkTheme ? Colors.white: Colors.black38,
                                 ),
                                 overflow: TextOverflow.ellipsis,
                               ),
                             ),
 
-                            const Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Icon(Icons.star, color: Colors.green, size: 14,),
-                                Icon(Icons.star, color: Colors.green, size: 14,),
-                                Icon(Icons.star, color: Colors.green, size: 14,),
-                                Icon(Icons.star, color: Colors.green, size: 14,),
-                                Icon(Icons.star, color: Colors.green, size: 14,),
-                              ],),
+                                const Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Icon(Icons.star, color: Colors.green, size: 14,),
+                                    Icon(Icons.star, color: Colors.green, size: 14,),
+                                    Icon(Icons.star, color: Colors.green, size: 14,),
+                                    Icon(Icons.star, color: Colors.green, size: 14,),
+                                    Icon(Icons.star, color: Colors.green, size: 14,),
+                                  ],),
 
                             Padding(
                               padding: const EdgeInsets.only(top: 4),
@@ -95,33 +98,35 @@ class FoodCampaign extends StatelessWidget {
                                             child: Text('\$${foodCampaignController.foodCampaignList[index].price}',
                                               style: TextStyle(
                                                 fontWeight: FontWeight.bold,
-                                                color: Get.find<ThemeController>().darkTheme ? Colors.white: Colors.black,
+                                                color: themeController.darkTheme ? Colors.white: Colors.black,
                                               ),
                                               overflow: TextOverflow.ellipsis,)
                                         ),
 
-                                        Text(
-                                          '\$${foodCampaignController.foodCampaignList[index].discount}',
-                                          style: TextStyle(
-                                              color: Get.find<ThemeController>().darkTheme ? Colors.white: Colors.black38,
-                                              decoration: TextDecoration.lineThrough
-                                          ),
-                                        ),
-                                      ],),
-                                  ),
+                                            Text(
+                                              '\$${foodCampaignController.foodCampaignList[index].discount}',
+                                              style: TextStyle(
+                                                  color: themeController.darkTheme ? Colors.white: Colors.black38,
+                                                  decoration: TextDecoration.lineThrough
+                                              ),
+                                            ),
+                                          ],),
+                                      ),
 
-                                  const Expanded(child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      Icon(Icons.add),
-                                    ],
-                                  )),
-                                ],),
-                            )
-                          ],),
-                      ),
-                    )
-                  ],),
+                                      const Expanded(child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.end,
+                                        children: [
+                                          Icon(Icons.add),
+                                        ],
+                                      )),
+                                    ],),
+                                )
+                              ],),
+                          ),
+                        )
+                      ],),
+                    );
+                  }
                 ),
               );
             }

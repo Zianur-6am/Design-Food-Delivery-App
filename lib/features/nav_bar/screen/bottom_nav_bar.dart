@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 class BottomNavBar extends StatelessWidget {
   // const BottomNavBar({super.key});
 
-  BottomNavController bottomNavController = Get.put(BottomNavController());
+  BottomNavController bottomNavController = Get.find();
 
   BottomNavBar({super.key});
 

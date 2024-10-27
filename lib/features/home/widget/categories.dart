@@ -41,14 +41,18 @@ class Categories extends StatelessWidget {
 
                  Padding(
                    padding: const EdgeInsets.only(top: 5),
-                   child: Text(
-                     categoryController.categoryList[index].name.toString(),
-                     style: TextStyle(
-                       fontSize: 14,
-                       fontWeight: FontWeight.bold,
-                       color: Get.find<ThemeController>().darkTheme ? Colors.white: Colors.black,
-                     ),
-                     overflow: TextOverflow.ellipsis,),
+                   child: GetBuilder(
+                     builder: (ThemeController themeController) {
+                       return Text(
+                         categoryController.categoryList[index].name.toString(),
+                         style: TextStyle(
+                           fontSize: 14,
+                           fontWeight: FontWeight.bold,
+                           color: themeController.darkTheme ? Colors.white: Colors.black,
+                         ),
+                         overflow: TextOverflow.ellipsis,);
+                     }
+                   ),
                  ),
                ],),
              );

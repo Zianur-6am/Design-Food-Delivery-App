@@ -4,6 +4,7 @@ import 'package:design_food_delivery_app/features/home/controller/banner/banner_
 import 'package:design_food_delivery_app/features/home/controller/categories/category_controller.dart';
 import 'package:design_food_delivery_app/features/home/controller/foodcampaign/food_campaign_controller.dart';
 import 'package:design_food_delivery_app/features/home/controller/popularfood/popular_food_controller.dart';
+import 'package:design_food_delivery_app/features/nav_bar/controller/nav_controller.dart';
 import 'package:design_food_delivery_app/features/theme/controller/theme_controller.dart';
 import 'package:design_food_delivery_app/features/home/domain/repository/home_repository.dart';
 import 'package:design_food_delivery_app/features/home/domain/repository/home_repository_interface.dart';
@@ -46,6 +47,7 @@ void init() async {
   Get.lazyPut(() => CategoryController(categoryServiceInterface: categoryServiceInterface));
   Get.lazyPut(() => FoodCampaignController(foodCampaignServiceInterface: foodCampaignServiceInterface));
   Get.lazyPut(() => PopularFoodController(popularFoodServiceInterface: popularFoodServiceInterface));
+  Get.lazyPut(() => BottomNavController());
 
 
 }
