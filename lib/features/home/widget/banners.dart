@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 
 class Banners extends StatelessWidget {
 
-  BannerController bannerController = Get.find();
+  // BannerController bannerController = Get.find();
 
   Banners({super.key});
 
@@ -36,7 +36,8 @@ class Banners extends StatelessWidget {
                     ))
                 .toList(),
             options: CarouselOptions(
-                aspectRatio: 2.5,
+                // aspectRatio: 2.5,
+                height: 150,
                 viewportFraction: 0.8,
                 initialPage: 0,
                 autoPlay: true,
@@ -45,13 +46,13 @@ class Banners extends StatelessWidget {
                   bannerController.updatePageNumber(value);
                 }),
           ),
-          buildCarouselIndicator(),
+          buildCarouselIndicator(bannerController),
         ],
       );
     });
   }
 
-  buildCarouselIndicator() {
+  buildCarouselIndicator(BannerController bannerController) {
     return SizedBox(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
